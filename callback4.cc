@@ -26,7 +26,9 @@
 namespace {
 
 // The base type that is stored in the collection.
-struct Func_t {};
+struct Func_t {
+	virtual ~Func_t() = default;
+};
 // The map that stores the callbacks.
 using callbacks_t = std::map<std::type_index, std::unique_ptr<Func_t>>;
 callbacks_t callbacks;
